@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light navbar-container border border-2 rounded border-black">
+    <div class="nav-logo navbar-logo">
+      <a href="/HTML/index.html">
+        <img src="/images/chottoimage-removebg-preview.png" alt="Logo" style="width: 90px; height: 75px; margin-left: 100px; padding-left: 10px;">
+      </a>
+    </div>
+    <!--write "mynavbar" in class instead of bg-success for custom background color light/dark works in opposite-->
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 px-5 navbar-menu">
+          <!--ms-auto for margin left or right. https://getbootstrap.com/docs/5.1/utilities/spacing/-->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#About">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Project">Project</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <a href="images/projects/1.jpg" class="project">
+            <img src="images/projects/1.jpg" alt="">
+            <div class="info">
+              <h3>Work Title</h3>
+              <div class="cat">Music, Headset</div>
+            </div>
+          </a>
+
+          <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
