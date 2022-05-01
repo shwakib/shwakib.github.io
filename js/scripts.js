@@ -22,5 +22,9 @@ $(document).ready(function(){
     type: 'image',
     gallery:{enabled:true}
   });
+
+  $("#sendmsgbtn").click(function(){
+    alert("This has been clicked");
+  });
 });
 
