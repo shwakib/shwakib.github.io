@@ -804,7 +804,7 @@ footer {
   }
 
   .project {
-    width: calc(70% - 50px);
+    width: calc(50% - 10px);
   }
 
   .contact-info .item {
