@@ -24,7 +24,7 @@ $(document).ready(function(){
   });
 
   $("#sendmsgbtn").click(function(){
-    alert("This has been clicked");
+    alert("Your Message Has Been Sent Successfully! \n Will Contact You Soon.");
   });
 });
 
