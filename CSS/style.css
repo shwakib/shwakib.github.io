@@ -142,7 +142,7 @@ html {
 
 #home .content h1::after {
   content: "Sifat Hasan Wakib";
-  animation: textanim 15s linear infinite;
+  animation: textanim 10s linear infinite;
   /* animation-direction: reverse; */
 }
 
@@ -153,10 +153,6 @@ html {
 
   50% {
     content: "A Seeker";
-  }
-
-  75% {
-    content: "A Human";
   }
 }
 
