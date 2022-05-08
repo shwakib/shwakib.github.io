@@ -807,6 +807,10 @@ footer {
     width: 100%;
     margin: 10px 0;
   }
+
+  #achievements{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -829,6 +833,9 @@ footer {
   .nameZone,
   .emailZone {
     max-width: 100%;
+  }
+  #achievements{
+    width: 100%;
   }
 }
 
