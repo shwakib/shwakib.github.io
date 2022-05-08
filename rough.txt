@@ -71,3 +71,52 @@
 .card button:hover {
   opacity: 0.7;
 }
+
+onblur="contactname()"
+onblur="email()"
+onblur="message()"
+onblur="message()"
+
+
+    // function name(){
+    //   var w=document.getElementById("nameofperson");
+    //   var x=document.getElementById("emailofperson");
+    //   var y=document.getElementById("subjectofperson");
+    //   var z=document.getElementById("messageofperson");
+    //   x.style.backgroundColor = 'white';
+    //   x.style.border = "solid #207398";
+    //   w.style.backgroundColor = 'white';
+    //   w.style.border = "solid #207398";
+    //   y.style.backgroundColor = 'white';
+    //   y.style.border = "solid #207398";
+    //   z.style.backgroundColor = 'white';
+    //   z.style.border = "solid #207398";
+    // }
+    // function name(){
+    //   var w=document.getElementById("nameofperson");
+    //   var x=document.getElementById("emailofperson");
+    //   var y=document.getElementById("subjectofperson");
+    //   var z=document.getElementById("messageofperson");
+    //   x.style.backgroundColor = 'white';
+    //   x.style.border = "solid #207398";
+    //   w.style.backgroundColor = 'white';
+    //   w.style.border = "solid #207398";
+    //   y.style.backgroundColor = 'white';
+    //   y.style.border = "solid #207398";
+    //   z.style.backgroundColor = 'white';
+    //   z.style.border = "solid #207398";
+    // }
+    // function name(){
+    //   var w=document.getElementById("nameofperson");
+    //   var x=document.getElementById("emailofperson");
+    //   var y=document.getElementById("subjectofperson");
+    //   var z=document.getElementById("messageofperson");
+    //   x.style.backgroundColor = 'white';
+    //   x.style.border = "solid #207398";
+    //   w.style.backgroundColor = 'white';
+    //   w.style.border = "solid #207398";
+    //   y.style.backgroundColor = 'white';
+    //   y.style.border = "solid #207398";
+    //   z.style.backgroundColor = 'white';
+    //   z.style.border = "solid #207398";
+    // }
