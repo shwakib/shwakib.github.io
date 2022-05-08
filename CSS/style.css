@@ -530,18 +530,22 @@ section.dark .section-title::after {
   border: 1px solid #0CA7DF;
   border-radius: 5px;
 }
-.projectlinkvisibilty span{
+
+.projectlinkvisibilty span {
   visibility: hidden;
 }
-.projectlinkvisibilty:hover span{
+
+.projectlinkvisibilty:hover span {
   visibility: visible;
 }
+
 .projectlink {
   display: inline;
   font-size: 20px;
   padding-left: 10px;
 }
-.projectlink:hover{
+
+.projectlink:hover {
   display: inline;
   font-size: 20px;
   padding-left: 10px;
@@ -732,6 +736,11 @@ footer {
   display: none;
 }
 
+.iccacertificate{
+  width: 1190px;
+  height: 778px;
+}
+
 @media screen and (max-width: 980px) {
   .menu-toggler {
     display: block;
@@ -808,7 +817,7 @@ footer {
     margin: 10px 0;
   }
 
-  #achievements{
+  .iccacertificate {
     width: 100%;
   }
 }
@@ -834,12 +843,13 @@ footer {
   .emailZone {
     max-width: 100%;
   }
-  #achievements{
+
+  .iccacertificate {
     width: 100%;
   }
 }
 
-#pre-loader{
+#pre-loader {
   background: #000 url(/loader/pre-loader.gif) no-repeat center center;
   height: 100vh;
   background-size: 25%;
