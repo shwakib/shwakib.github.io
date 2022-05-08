@@ -27,6 +27,8 @@
 </head>
 
 <body>
+  <div id="pre-loader"></div>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="inner-width">
@@ -601,6 +603,14 @@
 
   <!-- Go Top BTN -->
   <button class="goTop fas fa-arrow-up"></button>
+
+  <!--pre-loader JS-->
+  <script>
+    var loader=document.getElementById("pre-loader");
+    window.addEventListener("load",function(){
+      loader.style.display="none";
+    })
+  </script>
 
 </body>
 
