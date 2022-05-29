@@ -696,7 +696,7 @@ section.dark .section-title::after {
   resize: vertical;
 }
 
-.contact-form .btn {
+.contact-form .btn:hover {
   width: 180px;
   background-color: transparent;
   color: #48dbfb;
@@ -709,9 +709,17 @@ section.dark .section-title::after {
   height: 45px;
 }
 
-.contact-form .btn:hover {
+.contact-form .btn {
   background-color: #48dbfb;
   color: #fff;
+  width: 180px;
+  font-size: 16px;
+  border: 2px solid #48dbfb;
+  padding: 0;
+  margin-left: auto;
+  cursor: pointer;
+  transition: .3s linear;
+  height: 45px;
 }
 
 footer {
