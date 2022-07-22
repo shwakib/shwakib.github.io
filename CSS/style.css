@@ -150,10 +150,6 @@ html {
   25% {
     content: "A Learner";
   }
-
-  50% {
-    content: "A Seeker";
-  }
 }
 
 .sm a {
@@ -756,7 +752,7 @@ footer {
   display: none;
 }
 
-.iccacertificate{
+.iccacertificate {
   width: 1190px;
   height: 700px;
 }
