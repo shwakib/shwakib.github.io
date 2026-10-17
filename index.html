@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sifat Hasan Wakib · Network &amp; IT Support</title>
+<meta name="description" content="Sifat Hasan Wakib, network engineer in Windsor, Ontario with ISP NOC experience, MikroTik/Cisco and BGP/OSPF skills, and a peer-reviewed ACM paper.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="theme-color" content="#09090B">
+<link rel="canonical" href="https://shwakib.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Sifat Hasan Wakib">
+<meta property="og:title" content="Sifat Hasan Wakib · Network Engineer">
+<meta property="og:description" content="Network engineer in Windsor, Ontario with ISP NOC experience, MikroTik/Cisco and BGP/OSPF skills, and a peer-reviewed ACM paper.">
+<meta property="og:url" content="https://shwakib.github.io/">
+<meta property="og:image" content="https://shwakib.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sifat Hasan Wakib, Network Engineer, Windsor, Ontario">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sifat Hasan Wakib · Network Engineer">
+<meta name="twitter:description" content="Network engineer in Windsor, Ontario with ISP NOC experience, MikroTik/Cisco and BGP/OSPF skills, and a peer-reviewed ACM paper.">
+<meta name="twitter:image" content="https://shwakib.github.io/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #09090B;
+    --card: #111114;
+    --card-2: #17171C;
+    --line: rgba(255,255,255,.07);
+    --line-2: rgba(255,255,255,.13);
+    --text: #F5F5F7;
+    --soft: #A1A1AA;
+    --faint: #63636B;
+    --accent: #6D8BFF;
+    --accent-2: #A78BFA;
+    --accent-dim: rgba(109,139,255,.12);
+    --font: "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color-scheme: dark;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 10px; }
+
+  /* Background: drifting glow + fading grid */
+  .aurora { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
+  .aurora span { position: absolute; border-radius: 50%; filter: blur(110px); opacity: .4; animation: drift 20s ease-in-out infinite alternate; }
+  .aurora span:nth-child(1) { width: 560px; height: 560px; background: #3456E0; top: -200px; right: -140px; }
+  .aurora span:nth-child(2) { width: 460px; height: 460px; background: #6B3FD1; top: 35%; left: -240px; opacity: .25; animation-duration: 24s; }
+  .aurora span:nth-child(3) { width: 340px; height: 340px; background: #1F7FB8; bottom: -140px; right: 20%; opacity: .18; animation-duration: 28s; }
+  @keyframes drift { to { transform: translate(50px, 40px) scale(1.1); } }
+  .gridlines { position: absolute; inset: 0 0 auto; height: 900px; z-index: -1; pointer-events: none;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 60% 55% at 50% 25%, #000 15%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 25%, #000 15%, transparent 75%); }
+
+  /* Top bar */
+  header { position: fixed; inset: 0 0 auto; z-index: 20; padding-top: env(safe-area-inset-top, 0px);
+    background: rgba(9,9,11,.7); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom: 1px solid var(--line); }
+  .bar { width: min(1120px, 100% - 2rem); margin-inline: auto; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .bar .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; }
+  .bar .logo span { color: var(--accent); }
+  .bar .links { display: flex; gap: .3rem; }
+  .bar a.link { padding: .45rem .85rem; border-radius: 999px; font-size: .93rem; color: var(--soft); transition: color .2s, background .2s; }
+  .bar a.link:hover, .bar a.link.active { color: var(--text); background: rgba(255,255,255,.07); }
+  .bar .cta { padding: .55rem 1.15rem; border-radius: 999px; background: var(--text); color: var(--bg); font-weight: 600; font-size: .9rem; transition: transform .2s; }
+  .bar .cta:hover { transform: translateY(-1px); }
+  @media (max-width: 760px) { .bar .links { display: none; } }
+
+  .wrap { position: relative; width: min(1120px, 100% - 2rem); margin-inline: auto; padding: calc(100px + env(safe-area-inset-top, 0px)) 0 calc(2rem + env(safe-area-inset-bottom, 0px)); }
+
+  /* Bento grid */
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+  .card { position: relative; background: linear-gradient(180deg, var(--card-2), var(--card)); border: 1px solid var(--line); border-radius: 26px; padding: 1.75rem; overflow: hidden; isolation: isolate; transition: border-color .3s, transform .3s; }
+  /* Cursor spotlight */
+  .card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(380px 200px at var(--mx, 50%) var(--my, 0%), rgba(109,139,255,.13), transparent 70%); opacity: 0; transition: opacity .3s; pointer-events: none; }
+  .card:hover { border-color: rgba(109,139,255,.3); }
+  .card:hover::before { opacity: 1; }
+  .label { display: inline-flex; align-items: center; gap: .55rem; font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin-bottom: 1.2rem; }
+  .label::before { content: ""; width: 16px; height: 1px; background: currentColor; }
+  .label.blue { color: var(--accent); }
+
+  /* Intro */
+  .intro { grid-column: span 8; grid-row: span 2; padding: clamp(1.75rem, 4vw, 3rem); display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; min-height: 480px;
+    background: radial-gradient(560px 340px at 100% 0%, rgba(109,139,255,.2), transparent 70%), radial-gradient(420px 300px at 0% 100%, rgba(167,139,250,.12), transparent 70%), linear-gradient(180deg, var(--card-2), var(--card)); }
+  .status { display: inline-flex; align-items: center; gap: .6rem; padding: .35rem .9rem .35rem .4rem; border: 1px solid var(--line-2); border-radius: 999px; background: rgba(255,255,255,.03); font-size: .85rem; color: var(--soft); align-self: flex-start; }
+  .status b { font-weight: 600; font-size: .74rem; padding: .15rem .55rem; border-radius: 999px; background: rgba(61,220,151,.14); color: #5BE3A6; display: inline-flex; align-items: center; gap: .4rem; }
+  .status b::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: ping 2s ease-in-out infinite; }
+  @keyframes ping { 50% { opacity: .35; } }
+  h1 { font-size: clamp(2.9rem, 7.4vw, 5.4rem); font-weight: 800; letter-spacing: -.05em; line-height: .95; margin: 0 0 1.4rem; }
+  h1 .grad { background: linear-gradient(100deg, #fff 0%, #B9C8FF 45%, var(--accent) 75%, var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .intro p { color: var(--soft); font-size: clamp(1.05rem, 1.8vw, 1.2rem); max-width: 30em; margin: 0 0 2rem; }
+  .intro p strong { color: var(--text); font-weight: 500; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: .55rem; padding: .9rem 1.45rem; border-radius: 999px; font-weight: 600; font-size: .96rem; font-family: inherit; color: inherit; border: 0; cursor: pointer; transition: transform .25s, box-shadow .25s, background .25s; }
+  .btn svg { width: 18px; height: 18px; transition: transform .25s; }
+  .btn.primary { background: linear-gradient(135deg, var(--accent), #8A6BFF); color: #fff; box-shadow: 0 12px 34px -12px rgba(109,139,255,.8), inset 0 1px 0 rgba(255,255,255,.25); }
+  .btn.primary:hover { transform: translateY(-2px); }
+  .btn.primary:hover svg { transform: translateX(3px); }
+  .btn.ghost { border: 1px solid var(--line-2); background: rgba(255,255,255,.03); }
+  .btn.ghost:hover { background: rgba(255,255,255,.08); }
+
+  /* Photo */
+  .photo { grid-column: span 4; grid-row: span 2; padding: 1px; min-height: 480px; border: 0; background: linear-gradient(160deg, rgba(109,139,255,.9), rgba(255,255,255,.06) 40%, rgba(167,139,250,.7)); box-shadow: 0 40px 80px -36px rgba(52,86,224,.6); }
+  .photo .ph { position: absolute; inset: 1px; border-radius: 25px; background: radial-gradient(circle at 50% 38%, #2A2C38 0 20%, transparent 20.5%), radial-gradient(ellipse 50% 36% at 50% 95%, #2A2C38 0 98%, transparent 100%), linear-gradient(180deg, #17181F, #0E0F13); }
+  .photo img { position: absolute; inset: 1px; width: calc(100% - 2px); height: calc(100% - 2px); object-fit: cover; object-position: 50% 8%; border-radius: 25px; }
+  .photo .cap { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; justify-content: space-between; align-items: center; padding: .85rem 1rem; border-radius: 18px; background: rgba(17,17,20,.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--line-2); font-size: .9rem; }
+  .photo .cap span { color: var(--soft); }
+  .photo::before { display: none; }
+
+  /* Stats */
+  .stat { grid-column: span 3; display: flex; flex-direction: column; justify-content: space-between; min-height: 170px; }
+  .stat .label { margin-bottom: 0; }
+  .stat b { display: block; font-size: clamp(2.2rem, 4vw, 2.9rem); font-weight: 800; letter-spacing: -.05em; line-height: 1; margin-bottom: .35rem; }
+  .stat b em { font-style: normal; background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stat span.sub { color: var(--soft); font-size: .92rem; }
+
+  /* Experience */
+  .exp { grid-column: span 7; }
+  .row { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; padding: 1.15rem 0; border-top: 1px solid var(--line); }
+  .row:first-of-type { border-top: 0; padding-top: 0; }
+  .row h3 { font-size: 1.08rem; font-weight: 700; margin: 0 0 .15rem; letter-spacing: -.01em; display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .6rem; }
+  .row h3 .tag { font-size: .72rem; font-weight: 600; letter-spacing: 0; padding: .14rem .6rem; border-radius: 999px; border: 1px solid var(--line-2); color: var(--soft); background: rgba(255,255,255,.03); }
+  .row h3 .tag.now { color: #A9BBFF; background: var(--accent-dim); border-color: rgba(109,139,255,.3); }
+  .row .org { color: var(--soft); font-size: .95rem; display: block; }
+  .row .desc { color: var(--faint); font-size: .92rem; margin: .4rem 0 0; }
+  .row .side { display: flex; align-items: center; flex: none; padding-top: .1rem; }
+  .row .when { color: var(--faint); font-size: .85rem; white-space: nowrap; }
+  .row .when.tag { color: #A9BBFF; background: var(--accent-dim); border: 1px solid rgba(109,139,255,.3); padding: .15rem .6rem; border-radius: 999px; font-weight: 600; font-size: .76rem; }
+  .details { font: inherit; font-size: .85rem; font-weight: 600; color: var(--text); background: rgba(255,255,255,.04); border: 1px solid var(--line-2); border-radius: 999px; padding: .42rem .95rem; cursor: pointer; display: inline-flex; align-items: center; gap: .4rem; transition: background .2s, border-color .2s; white-space: nowrap; }
+  .details::after { content: "→"; transition: transform .2s; }
+  .details:hover { background: var(--accent-dim); border-color: rgba(109,139,255,.5); }
+  .details:hover::after { transform: translateX(2px); }
+
+  /* Modal */
+  dialog.modal { width: min(620px, calc(100% - 2rem)); max-height: min(86vh, 760px); padding: 0; border: 1px solid var(--line-2); border-radius: 26px; color: var(--text); overflow: hidden;
+    background: radial-gradient(500px 220px at 100% 0%, rgba(109,139,255,.18), transparent 70%), linear-gradient(180deg, var(--card-2), var(--card)); box-shadow: 0 40px 100px -30px rgba(0,0,0,.9); }
+  dialog.modal::backdrop { background: rgba(5,5,8,.7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  dialog.modal[open] { animation: pop .28s cubic-bezier(.2,.8,.2,1); }
+  dialog.modal[open]::backdrop { animation: fade .28s ease; }
+  @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+  @keyframes fade { from { opacity: 0; } }
+  .m-inner { max-height: inherit; overflow-y: auto; padding: 2rem; overscroll-behavior: contain; }
+  .m-close { position: absolute; top: 1rem; right: 1rem; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line-2); background: rgba(17,17,20,.8); color: var(--text); font-size: 1.1rem; cursor: pointer; display: grid; place-items: center; z-index: 1; }
+  .m-close:hover { background: rgba(255,255,255,.1); }
+  .m-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; padding-right: 2.5rem; }
+  .m-meta span { font-size: .78rem; font-weight: 600; padding: .2rem .65rem; border-radius: 999px; border: 1px solid var(--line-2); color: var(--soft); }
+  .m-meta span.hl { color: #A9BBFF; background: var(--accent-dim); border-color: rgba(109,139,255,.3); }
+  .modal h2 { font-size: clamp(1.5rem, 4vw, 1.9rem); font-weight: 800; letter-spacing: -.035em; line-height: 1.12; margin: 0 0 .3rem; }
+  .m-org { color: var(--soft); margin: 0 0 1.5rem; }
+  .m-stats { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem; }
+  .m-stats div { flex: 1 1 140px; padding: .9rem 1rem; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.02); }
+  .m-stats b { display: block; font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
+  .m-stats span { color: var(--soft); font-size: .85rem; }
+  .m-h { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin: 0 0 .8rem; }
+  .m-list { list-style: none; padding: 0; margin: 0 0 1.6rem; display: grid; gap: .75rem; }
+  .m-list li { position: relative; padding-left: 1.3rem; color: #D4D4D8; font-size: .97rem; line-height: 1.6; }
+  .m-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+  .modal .chips { margin-bottom: .25rem; }
+  body.modal-open { overflow: hidden; }
+  @media (max-width: 520px) {
+    dialog.modal { width: 100%; max-width: 100%; max-height: 90vh; margin: auto 0 0; border-radius: 24px 24px 0 0; border-bottom: 0; }
+    dialog.modal[open] { animation: up .3s cubic-bezier(.2,.8,.2,1); }
+    @keyframes up { from { transform: translateY(40px); opacity: 0; } }
+    .m-inner { padding: 1.6rem 1.35rem calc(1.6rem + env(safe-area-inset-bottom, 0px)); }
+  }
+
+  /* Education */
+  .edu { grid-column: span 5; }
+  .edu .item { display: flex; gap: 1rem; padding: 1.1rem 0; border-top: 1px solid var(--line); }
+  .edu .item:first-of-type { border-top: 0; padding-top: 0; }
+  .edu .ico { flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--accent-dim); color: var(--accent); }
+  .edu .ico svg { width: 20px; height: 20px; }
+  .edu h3 { font-size: 1.05rem; font-weight: 700; margin: 0; }
+  .edu p { color: var(--soft); font-size: .93rem; margin: .1rem 0 0; }
+  .edu small { color: var(--faint); font-size: .84rem; }
+  .edu small { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .6rem; }
+  .grade { font-size: .74rem; font-weight: 600; color: #A9BBFF; background: var(--accent-dim); border: 1px solid rgba(109,139,255,.3); padding: .1rem .55rem; border-radius: 999px; font-variant-numeric: tabular-nums; }
+
+  /* Publication */
+  .paper { grid-column: span 7; display: flex; flex-direction: column; gap: .9rem;
+    background: radial-gradient(500px 240px at 0% 0%, rgba(109,139,255,.22), transparent 70%), radial-gradient(400px 240px at 100% 100%, rgba(167,139,250,.14), transparent 70%), var(--card); border-color: rgba(109,139,255,.28); }
+  .p-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .p-top .label { margin-bottom: 0; }
+  .peer { font-size: .74rem; font-weight: 600; color: #5BE3A6; background: rgba(61,220,151,.12); border: 1px solid rgba(61,220,151,.3); padding: .15rem .6rem; border-radius: 999px; }
+  .paper h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.22; margin: 0; max-width: 22em; }
+  .p-venue { color: var(--soft); font-size: .92rem; margin: -.35rem 0 0; }
+  .p-authors { color: var(--faint); font-size: .88rem; margin: -.4rem 0 0; line-height: 1.55; }
+  .p-authors .me { color: var(--text); font-weight: 600; background: var(--accent-dim); border-radius: 4px; padding: 0 .3rem; }
+  .p-authors.m-auth { margin: 0 0 .6rem; font-size: .95rem; color: var(--soft); }
+  .m-doi { color: var(--faint); font-size: .88rem; margin: 0 0 1.6rem; }
+  .m-doi a { color: #A9BBFF; text-decoration: underline; text-underline-offset: 3px; }
+  .p-sum { color: #C4C4CC; font-size: .97rem; margin: 0; max-width: 40em; }
+  .p-tags span { font-size: .82rem; padding: .35rem .75rem; }
+  .p-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-top: auto; padding-top: .4rem; }
+  .btn.sm { padding: .62rem 1.1rem; font-size: .9rem; }
+  .btn.sm svg { width: 16px; height: 16px; }
+
+  /* Skills */
+  .skills { grid-column: span 5; }
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .chips span { padding: .48rem .9rem; border-radius: 999px; background: rgba(255,255,255,.02); border: 1px solid var(--line-2); font-size: .9rem; font-weight: 500; }
+  .chips span.hl { background: var(--accent-dim); border-color: rgba(109,139,255,.35); color: #C3CFFF; }
+
+  .sk + .sk { margin-top: 1.25rem; }
+  .sk h4 { font-size: .85rem; font-weight: 600; color: var(--soft); margin: 0 0 .6rem; }
+  .research2 { grid-column: span 12; display: grid; grid-template-columns: 220px 1fr; gap: .4rem 2rem; align-items: baseline; }
+  .research2 .label { margin: 0; grid-row: span 2; }
+  .research2 h3 { font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: -.01em; }
+  .research2 p { color: var(--soft); margin: 0; }
+  @media (max-width: 680px) { .research2 { grid-template-columns: 1fr; } .research2 .label { grid-row: auto; margin-bottom: .6rem; } }
+  /* Contact */
+  .contact { grid-column: span 12; display: grid; grid-template-columns: 1fr 1.15fr; gap: 3rem; align-items: start; padding: clamp(2rem, 5vw, 3.5rem);
+    background: radial-gradient(640px 280px at 0% 0%, rgba(109,139,255,.24), transparent 70%), radial-gradient(400px 220px at 100% 120%, rgba(167,139,250,.14), transparent 70%), var(--card); border-color: var(--line-2); }
+  .contact h2 { font-size: clamp(2.1rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -.05em; line-height: 1; margin: 0 0 .9rem; }
+  .contact p { color: var(--soft); margin: 0 0 1.5rem; max-width: 26em; }
+  .c-form { display: grid; gap: .9rem; }
+  .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+  .c-form label { display: grid; gap: .4rem; font-size: .85rem; font-weight: 600; color: var(--soft); }
+  .c-form input, .c-form textarea { font: inherit; font-size: .97rem; font-weight: 400; color: var(--text); background: rgba(9,9,11,.55); border: 1px solid var(--line-2); border-radius: 14px; padding: .8rem 1rem; width: 100%; transition: border-color .2s, box-shadow .2s; }
+  .c-form textarea { resize: vertical; min-height: 130px; }
+  .c-form input::placeholder, .c-form textarea::placeholder { color: var(--faint); }
+  .c-form input:focus, .c-form textarea:focus { outline: none; border-color: rgba(109,139,255,.7); box-shadow: 0 0 0 4px rgba(109,139,255,.15); }
+  .c-form .invalid { border-color: rgba(248,113,113,.7); }
+  .hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .f-foot { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: .2rem; }
+  .f-status { margin: 0 !important; font-size: .92rem; color: var(--soft); }
+  .f-status.ok { color: #5BE3A6; }
+  .f-status.err { color: #F87171; }
+  .c-form button[disabled] { opacity: .65; cursor: progress; transform: none; }
+  @media (max-width: 860px) { .contact { grid-template-columns: 1fr; gap: 2rem; } }
+  @media (max-width: 520px) { .f-row { grid-template-columns: 1fr; } }
+  .copy { position: relative; }
+  .copy .toast { position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translate(-50%, 6px); background: var(--text); color: var(--bg); font-size: .8rem; font-weight: 600; padding: .3rem .7rem; border-radius: 8px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; white-space: nowrap; }
+  .copy.done .toast { opacity: 1; transform: translate(-50%, 0); }
+
+  footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .75rem; color: var(--faint); font-size: .88rem; padding: 2rem .25rem 0; }
+  footer .links { display: flex; gap: 1.4rem; }
+  footer a:hover { color: var(--text); }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .intro { grid-column: span 12; min-height: 0; }
+    .photo { grid-column: span 12; min-height: 400px; }
+    .stat { grid-column: span 6; }
+    .exp, .edu, .paper, .skills { grid-column: span 12; }
+  }
+  @media (max-width: 520px) {
+    .card { border-radius: 22px; padding: 1.4rem; }
+    .photo { min-height: 360px; }
+    .photo .ph, .photo img { border-radius: 21px; }
+    .stat { min-height: 140px; }
+    .row { flex-direction: column; gap: .75rem; }
+    .row .side { padding-top: 0; }
+  }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(18px) scale(.99); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1), border-color .3s; transition-delay: calc(var(--i, 0) * 70ms), calc(var(--i, 0) * 70ms), 0s; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .aurora span, .status b::before { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<header>
+  <nav class="bar" aria-label="Main">
+    <a href="#top" class="logo" aria-label="Home">Sifat<span>.</span></a>
+    <div class="links">
+      <a href="#work" class="link">Experience</a>
+      <a href="#education" class="link">Education</a>
+      <a href="#skills" class="link">Skills</a>
+    </div>
+    <a href="#contact" class="cta">Contact</a>
+  </nav>
+</header>
+
+<div class="wrap" id="top">
+  <div class="gridlines" aria-hidden="true"></div>
+  <main class="grid">
+
+    <div class="card intro reveal" style="--i:0">
+      <span class="status"><b>Available</b>Open to new opportunities</span>
+      <div>
+        <h1>Sifat Hasan<br><span class="grad">Wakib</span></h1>
+        <p>Network engineer based in <strong>Windsor, Ontario</strong>, with ISP network operations experience and over a year supporting field technicians for a major U.S. telecom carrier. Hands-on with MikroTik and Cisco, BGP/OSPF and fiber access networks.</p>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Get in touch
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn ghost" href="/Sifat-Hasan-Wakib-Resume.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            Resume
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card photo reveal" style="--i:1">
+      <div class="ph" aria-hidden="true"></div>
+      <img src="/headshot.jpg" alt="Portrait of Sifat Hasan Wakib" onerror="this.remove()">
+      <div class="cap"><b>Windsor, ON</b><span>Canada</span></div>
+    </div>
+
+    <div class="card stat reveal" style="--i:2"><span class="label">Resolution</span><div><b>90<em>%</em></b><span class="sub">First-call resolution rate</span></div></div>
+    <div class="card stat reveal" style="--i:3"><span class="label">Volume</span><div><b>30<em>–</em>50</b><span class="sub">Technician calls a day</span></div></div>
+    <div class="card stat reveal" style="--i:4"><span class="label">Impact</span><div><b>15<em>%</em></b><span class="sub">Lower churn at the ISP</span></div></div>
+    <div class="card stat reveal" style="--i:5"><span class="label">Research</span><div><b>ACM</b><span class="sub">Published research</span></div></div>
+
+    <section class="card exp reveal" id="work" style="--i:0">
+      <span class="label">Experience</span>
+      <div class="row">
+        <div class="main"><h3>Associate, IT Helpdesk<span class="tag now">Current</span></h3><span class="org">Sutherland Global Services · May 2025 — now</span><p class="desc">Remote support for field technicians on Internet, VoIP and IPTV issues for a major U.S. telecom carrier.</p></div>
+        <div class="side"><button class="details" type="button" data-job="job-sutherland">Details</button></div>
+      </div>
+      <div class="row">
+        <div class="main"><h3>Grocery Clerk &amp; Receiver<span class="tag now">Current</span></h3><span class="org">Real Canadian Superstore · Oct 2023 — now</span><p class="desc">Receiving, inventory and customer service in a fast-paced store.</p></div>
+        <div class="side"><button class="details" type="button" data-job="job-superstore">Details</button></div>
+      </div>
+      <div class="row">
+        <div class="main"><h3>Network Engineer, NOC<span class="tag">Full-Time</span></h3><span class="org">InfoLink Limited · Jan 2021 — Jul 2022</span><p class="desc">Monitored and maintained an ISP backbone with MikroTik, Cisco and OLTs, and led a fiber technician team.</p></div>
+        <div class="side"><button class="details" type="button" data-job="job-infolink-noc">Details</button></div>
+      </div>
+      <div class="row">
+        <div class="main"><h3>Technical Support Engineer Intern<span class="tag">Internship</span></h3><span class="org">InfoLink Limited · Oct — Dec 2020</span><p class="desc">Remote and on-site support for customer network issues.</p></div>
+        <div class="side"><button class="details" type="button" data-job="job-infolink-intern">Details</button></div>
+      </div>
+    </section>
+
+    <section class="card edu reveal" id="education" style="--i:1">
+      <span class="label">Education</span>
+      <div class="item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+        <div><small>2023 — 2024 <span class="grade">81% average</span></small><h3>Master of Applied Computing</h3><p>University of Windsor</p></div>
+      </div>
+      <div class="item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+        <div><small>2017 — 2020 <span class="grade">CGPA 3.53 / 4.00</span></small><h3>Bachelor of Computer Science &amp; Engineering</h3><p>American International University-Bangladesh, Dhaka</p></div>
+      </div>
+      <div class="item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h7"/></svg></span>
+        <div><small>2014 — 2016 <span class="grade">GPA 4.92 / 5.00</span></small><h3>Higher Secondary Certificate (HSC)</h3><p>Chalan College, Nangalkot, Cumilla · Science</p></div>
+      </div>
+      <div class="item">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h7"/></svg></span>
+        <div><small>2009 — 2014 <span class="grade">GPA 5.00 / 5.00</span></small><h3>Secondary School Certificate (SSC)</h3><p>Comilla Zilla School, Cumilla</p></div>
+      </div>
+    </section>
+
+    <section class="card paper reveal" style="--i:0">
+      <div class="p-top">
+        <span class="label blue">Publication</span>
+        <span class="peer">Peer-reviewed · ACM</span>
+      </div>
+      <h3>A Traffic Flow Steering Algorithm for Hybrid Terrestrial-Satellite Backhaul Network</h3>
+      <p class="p-venue">ICCA ’22 · 2nd International Conference on Computing Advancements · Aug 2022</p>
+      <p class="p-authors">Md Sabbir Shikder, Md Mehedi Hasan, <b class="me">Sifat Hasan Wakib</b>, Anisha Tasnim, Md. Shahriar Rahman</p>
+      <p class="p-sum">Sorts traffic into delay-tolerant and delay-sensitive flows. When a backhaul link is about to overload, delay-tolerant traffic shifts to a satellite link while delay-sensitive traffic stays on the primary link, raising overall throughput.</p>
+      <div class="chips p-tags"><span>Traffic engineering</span><span>Load balancing</span><span>Satellite backhaul</span><span>Network simulation</span></div>
+      <div class="p-actions">
+        <a class="btn primary sm" href="https://doi.org/10.1145/3542954.3543040" target="_blank" rel="noopener">Read on ACM
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+        <a class="btn ghost sm" href="https://github.com/shwakib/Thesis_works" target="_blank" rel="noopener">View code</a>
+        <a class="btn ghost sm" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:6925879325795766272" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg>Certificate</a>
+        <button class="details" type="button" data-job="pub-traffic">Details</button>
+      </div>
+    </section>
+
+    <section class="card skills reveal" id="skills" style="--i:1">
+      <span class="label">Skills</span>
+      <div class="sk"><h4>Routing &amp; switching</h4><div class="chips"><span class="hl">BGP</span><span class="hl">OSPF</span><span>VLAN</span><span>NAT</span><span>DHCP</span><span>DNS</span><span>PPPoE</span><span>VPN</span><span>QoS</span></div></div>
+      <div class="sk"><h4>Hardware &amp; access</h4><div class="chips"><span class="hl">MikroTik</span><span class="hl">Cisco</span><span>GPON / FTTH</span><span>OLTs &amp; ONTs</span><span>VDSL</span><span>OTDR</span></div></div>
+      <div class="sk"><h4>Monitoring &amp; tools</h4><div class="chips"><span>LibreNMS</span><span>Nagios</span><span>Cacti</span><span>Wireshark</span><span>SNMP</span><span>Linux</span><span>Jira</span></div></div>
+    </section>
+
+    <section class="card research2 reveal" style="--i:2">
+      <span class="label">Academic research</span>
+      <h3>Blockchain Armor: Safeguarding Against DDoS Attacks</h3>
+      <p>A blockchain-based approach to mitigating DDoS attacks and improving uptime in decentralized networks.</p>
+    </section>
+
+    <section class="card contact reveal" id="contact">
+      <div class="c-left">
+        <h2>Let's talk.</h2>
+        <p>I'm looking for NOC and network engineering roles in Windsor and across Ontario. Send a message here, or reach me directly.</p>
+        <div class="actions">
+          <a class="btn ghost sm" href="mailto:sifat6460@gmail.com">sifat6460@gmail.com</a>
+          <button class="btn ghost sm copy" type="button" data-email="sifat6460@gmail.com"><span class="toast">Copied</span>Copy email</button>
+          <a class="btn ghost sm" href="https://www.linkedin.com/in/sifathasanwakib" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <form class="c-form" id="contact-form" action="https://formsubmit.co/e305bbc1ce3f441fcb1a606d077a01b4" method="POST" novalidate>
+        <div class="f-row">
+          <label>Name<input type="text" name="name" autocomplete="name" required maxlength="100" placeholder="Your name"></label>
+          <label>Email<input type="email" name="email" autocomplete="email" required maxlength="150" placeholder="you@company.com"></label>
+        </div>
+        <label>Subject<input type="text" name="subject" maxlength="150" placeholder="Job opportunity, question…"></label>
+        <label>Message<textarea name="message" required maxlength="3000" rows="5" placeholder="How can I help?"></textarea></label>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="New message from your portfolio">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://shwakib.github.io/#contact">
+        <div class="f-foot">
+          <button class="btn primary" type="submit">
+            <span class="f-label">Send message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <p class="f-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="yr">2026</span> Sifat Hasan Wakib</span>
+    <div class="links"><a href="https://www.linkedin.com/in/sifathasanwakib" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/shwakib" target="_blank" rel="noopener">GitHub</a><a href="#top">Back to top ↑</a></div>
+  </footer>
+</div>
+
+<dialog class="modal" id="job-modal" aria-labelledby="m-title">
+  <button class="m-close" type="button" aria-label="Close">✕</button>
+  <div class="m-inner" id="m-body"></div>
+</dialog>
+
+<template id="job-sutherland">
+  <div class="m-meta"><span class="hl">Current</span><span>Full-Time</span><span>Windsor, ON</span></div>
+  <h2 id="m-title">Associate, IT Helpdesk</h2>
+  <p class="m-org">Sutherland Global Services · May 2025 — Present</p>
+  <div class="m-stats"><div><b>90%</b><span>Average first-call resolution</span></div><div><b>30–50</b><span>Technician calls a day</span></div></div>
+  <p class="m-h">What I do</p>
+  <ul class="m-list">
+    <li>Provide real-time remote support to field technicians dispatched to residential and business customer sites and open-access provider locations for a major U.S. telecom carrier.</li>
+    <li>Diagnose and resolve Internet, VoIP and IPTV issues, including no sync, sync with no service, slow browsing, intermittent service, static IP and website access issues, dial tone and call failures, and set-top box misconfigurations.</li>
+    <li>Maintain a 90% average first-call resolution rate across residential and business accounts through targeted probing, reviewing technicians' prior troubleshooting, and standardized Methods &amp; Procedures (M&amp;P).</li>
+    <li>Escalate issues that need higher-level tool access to support and escalation teams, creating escalation tickets with complete case documentation.</li>
+  </ul>
+  <p class="m-h">Tools &amp; focus</p>
+  <div class="chips"><span class="hl">Internet &amp; DSL sync</span><span class="hl">VoIP</span><span class="hl">IPTV</span><span>M&amp;P troubleshooting</span><span>CRM ticketing</span><span>Escalation management</span></div>
+</template>
+
+<template id="job-superstore">
+  <div class="m-meta"><span class="hl">Current</span><span>Windsor, ON</span></div>
+  <h2 id="m-title">Grocery Clerk &amp; Receiver</h2>
+  <p class="m-org">Real Canadian Superstore (Loblaw) · Oct 2023 — Present</p>
+  <p class="m-h">What I do</p>
+  <ul class="m-list">
+    <li>Receive and verify incoming shipments against orders.</li>
+    <li>Manage inventory and keep stock accurate and organized.</li>
+    <li>Assist customers in a fast-paced retail environment.</li>
+  </ul>
+  <p class="m-h">Strengths</p>
+  <div class="chips"><span>Customer service</span><span>Inventory management</span><span>Attention to detail</span><span>Teamwork</span></div>
+</template>
+
+<template id="job-infolink-noc">
+  <div class="m-meta"><span class="hl">Full-Time</span><span>Network Operations Center</span><span>Dhaka, Bangladesh</span></div>
+  <h2 id="m-title">Network Engineer, NOC</h2>
+  <p class="m-org">InfoLink Limited · Jan 2021 — Jul 2022</p>
+  <div class="m-stats"><div><b>15%</b><span>Reduction in customer churn</span></div><div><b>1.5 yrs</b><span>ISP network operations</span></div></div>
+  <p class="m-h">What I did</p>
+  <ul class="m-list">
+    <li>Monitored backbone links, network devices and hardware performance with LibreNMS, Nagios and Cacti, detecting faults and failover events and taking corrective action to restore availability.</li>
+    <li>Configured, maintained and troubleshot routers, switches, wireless access points and OLTs using MikroTik RouterOS and PuTTY/CLI.</li>
+    <li>Resolved connectivity and service issues for residential customers, business clients and International Internet Gateway (IIG) partners, contributing to a 15% reduction in customer churn.</li>
+    <li>Coordinated with upstream Internet and telecom providers to establish connections, implement network changes and resolve infrastructure issues.</li>
+    <li>Led a team of fiber technicians, managed support tickets in an internal CRM, coordinated field assignments and remotely guided technicians during service restoration.</li>
+    <li>Provided on-site support for Point of Presence (PoP) infrastructure, and performed preventive maintenance and disaster recovery work to maximize uptime.</li>
+  </ul>
+  <p class="m-h">Tools &amp; tech</p>
+  <div class="chips"><span class="hl">MikroTik RouterOS</span><span class="hl">Cisco</span><span class="hl">BGP</span><span class="hl">OSPF</span><span>OLTs</span><span>LibreNMS</span><span>Nagios</span><span>Cacti</span><span>PuTTY</span><span>AnyDesk</span></div>
+</template>
+
+<template id="job-infolink-intern">
+  <div class="m-meta"><span class="hl">Internship</span><span>Technical Support</span><span>Dhaka, Bangladesh</span></div>
+  <h2 id="m-title">Technical Support Engineer Intern</h2>
+  <p class="m-org">InfoLink Limited · Oct 2020 — Dec 2020</p>
+  <p class="m-h">What I did</p>
+  <ul class="m-list">
+    <li>Provided remote and on-site support for customer network issues, including router and switch installation.</li>
+    <li>Assisted system administrators with site visits to maintain network performance.</li>
+  </ul>
+  <p class="m-h">Skills built</p>
+  <div class="chips"><span>Customer support</span><span>Router &amp; switch installation</span><span>Field work</span></div>
+</template>
+
+<template id="pub-traffic">
+  <div class="m-meta"><span class="hl">Peer-reviewed</span><span>ACM ICCA ’22</span><span>Short paper</span><span>Free access</span></div>
+  <h2 id="m-title">A Traffic Flow Steering Algorithm for Hybrid Terrestrial-Satellite Backhaul Network</h2>
+  <p class="m-org">Proceedings of the 2nd International Conference on Computing Advancements (ICCA ’22) · ACM · pp. 187–190 · Published 11 August 2022</p>
+  <p class="m-h">Authors</p>
+  <p class="p-authors m-auth">Md Sabbir Shikder, Md Mehedi Hasan, <b class="me">Sifat Hasan Wakib</b>, Anisha Tasnim, Md. Shahriar Rahman</p>
+  <p class="m-doi">DOI <a href="https://doi.org/10.1145/3542954.3543040" target="_blank" rel="noopener">10.1145/3542954.3543040</a></p>
+  <p class="m-h">The problem</p>
+  <ul class="m-list">
+    <li>Cellular backhaul links in remote areas congest easily under heavy load, which hurts latency, throughput and link stability.</li>
+  </ul>
+  <p class="m-h">The approach</p>
+  <ul class="m-list">
+    <li>Classifies incoming traffic flows as delay-tolerant or delay-sensitive.</li>
+    <li>When a backhaul link is likely to overload, steers delay-tolerant flows to a secondary satellite link while keeping delay-sensitive flows on the primary terrestrial link.</li>
+    <li>Designed to run at each base transceiver station (BTS) in the cellular network.</li>
+  </ul>
+  <p class="m-h">Results</p>
+  <ul class="m-list">
+    <li>Simulations showed higher network throughput through better load distribution across backhaul links.</li>
+  </ul>
+  <p class="m-h">Topics</p>
+  <div class="chips" style="margin-bottom:1.5rem"><span class="hl">Traffic engineering</span><span class="hl">Load balancing</span><span>Satellite backhaul</span><span>Cellular networks</span><span>Network simulation</span><span>C#</span></div>
+  <div class="actions">
+    <a class="btn primary sm" href="https://doi.org/10.1145/3542954.3543040" target="_blank" rel="noopener">Read on ACM</a>
+    <a class="btn ghost sm" href="https://github.com/shwakib/Thesis_works" target="_blank" rel="noopener">View code</a>
+    <a class="btn ghost sm" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:6925879325795766272" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg>Certificate</a>
+  </div>
+</template>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Reveal on scroll
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+    els.forEach(el => io.observe(el));
+  } else els.forEach(el => el.classList.add('in'));
+
+  // Cursor spotlight on cards
+  document.querySelectorAll('.card').forEach(c => c.addEventListener('pointermove', e => {
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }));
+
+  // Highlight active nav link
+  const links = document.querySelectorAll('.bar a.link');
+  if ('IntersectionObserver' in window) {
+    const so = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    }), { rootMargin: '-40% 0px -55% 0px' });
+    links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) so.observe(s); });
+  }
+
+  // Copy email
+  document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.email); b.classList.add('done'); setTimeout(() => b.classList.remove('done'), 1600); }
+    catch (err) { window.location.href = 'mailto:' + b.dataset.email; }
+  }));
+  // Experience details modal
+  const modal = document.getElementById('job-modal');
+  const mBody = document.getElementById('m-body');
+  let lastBtn = null;
+  function closeModal() { if (modal.open) modal.close(); }
+  document.querySelectorAll('.details').forEach(btn => btn.addEventListener('click', () => {
+    const tpl = document.getElementById(btn.dataset.job);
+    if (!tpl) return;
+    mBody.replaceChildren(tpl.content.cloneNode(true));
+    mBody.scrollTop = 0;
+    lastBtn = btn;
+    if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+    document.body.classList.add('modal-open');
+  }));
+  modal.querySelector('.m-close').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  modal.addEventListener('close', () => { document.body.classList.remove('modal-open'); if (lastBtn) lastBtn.focus(); });
+
+  // Contact form (sends via FormSubmit without leaving the page)
+  const form = document.getElementById('contact-form');
+  if (form) {
+    const status = form.querySelector('.f-status');
+    const btn = form.querySelector('button[type="submit"]');
+    const label = btn.querySelector('.f-label');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      let ok = true;
+      form.querySelectorAll('[required]').forEach(f => { const bad = !f.value.trim() || (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim())); f.classList.toggle('invalid', bad); if (bad) ok = false; });
+      if (!ok) { status.className = 'f-status err'; status.textContent = 'Please fill in your name, a valid email and a message.'; return; }
+      if (form._honey.value) return;
+      btn.disabled = true; label.textContent = 'Sending…'; status.className = 'f-status'; status.textContent = '';
+      try {
+        const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || data.success === 'false' || data.success === false) throw new Error();
+        form.reset(); status.className = 'f-status ok'; status.textContent = 'Thanks! Your message was sent. I’ll get back to you soon.';
+      } catch (err) {
+        status.className = 'f-status err'; status.innerHTML = 'Couldn’t send right now. Please email <a href="mailto:sifat6460@gmail.com" style="color:inherit;text-decoration:underline">sifat6460@gmail.com</a>.';
+      } finally { btn.disabled = false; label.textContent = 'Send message'; }
+    });
+    form.querySelectorAll('input, textarea').forEach(f => f.addEventListener('input', () => f.classList.remove('invalid')));
+  }
+</script>
+</body>
+</html>
