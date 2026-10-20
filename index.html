@@ -215,6 +215,20 @@
   .research2 h3 { font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: -.01em; }
   .research2 p { color: var(--soft); margin: 0; }
   @media (max-width: 680px) { .research2 { grid-template-columns: 1fr; } .research2 .label { grid-row: auto; margin-bottom: .6rem; } }
+  /* Projects */
+  .projects { grid-column: span 12; }
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 1rem; }
+  .proj { display: flex; flex-direction: column; gap: .8rem; padding: 1.4rem; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.02); transition: border-color .25s, transform .25s; }
+  .proj:hover { border-color: rgba(109,139,255,.35); transform: translateY(-2px); }
+  .proj-top { display: flex; justify-content: space-between; align-items: center; gap: .75rem; flex-wrap: wrap; }
+  .proj h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -.02em; margin: 0; }
+  .proj p { color: var(--soft); font-size: .95rem; margin: 0; flex: 1; }
+  .proj .tag { font-size: .72rem; font-weight: 600; padding: .14rem .6rem; border-radius: 999px; border: 1px solid var(--line-2); color: var(--soft); }
+  .proj .tag.now { color: #A9BBFF; background: var(--accent-dim); border-color: rgba(109,139,255,.3); }
+  .proj .chips span { font-size: .8rem; padding: .3rem .7rem; }
+  .proj-actions { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-top: .2rem; }
+  .proj-actions .btn svg { width: 16px; height: 16px; }
+  @media (prefers-reduced-motion: reduce) { .proj { transition: none; } }
   /* Contact */
   .contact { grid-column: span 12; display: grid; grid-template-columns: 1fr 1.15fr; gap: 3rem; align-items: start; padding: clamp(2rem, 5vw, 3.5rem);
     background: radial-gradient(640px 280px at 0% 0%, rgba(109,139,255,.24), transparent 70%), radial-gradient(400px 220px at 100% 120%, rgba(167,139,250,.14), transparent 70%), var(--card); border-color: var(--line-2); }
@@ -280,6 +294,7 @@
       <a href="#work" class="link">Experience</a>
       <a href="#education" class="link">Education</a>
       <a href="#skills" class="link">Skills</a>
+      <a href="#projects" class="link">Projects</a>
     </div>
     <a href="#contact" class="cta">Contact</a>
   </nav>
@@ -390,6 +405,27 @@
       <p>A blockchain-based approach to mitigating DDoS attacks and improving uptime in decentralized networks.</p>
     </section>
 
+    <section class="card projects reveal" id="projects">
+      <span class="label">Projects</span>
+      <div class="proj-grid">
+        <article class="proj">
+          <div class="proj-top">
+            <h3>UniInfoHub</h3>
+            <span class="tag now">Full-stack</span>
+          </div>
+          <p>A one-stop web platform for University of Windsor students that brings scattered campus information together: important dates, news, transit, health-centre appointments and UWinCard top-ups.</p>
+          <div class="chips"><span class="hl">React</span><span class="hl">Flask</span><span>MySQL</span><span>SQLAlchemy</span><span>BeautifulSoup</span><span>Stripe</span></div>
+          <div class="proj-actions">
+            <a class="btn ghost sm" href="https://github.com/shwakib/UniInfoHub" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+              Code
+            </a>
+            <button class="details" type="button" data-job="proj-uniinfohub">Details</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="card contact reveal" id="contact">
       <div class="c-left">
         <h2>Let's talk.</h2>
@@ -493,6 +529,30 @@
   </ul>
   <p class="m-h">Skills built</p>
   <div class="chips"><span>Customer support</span><span>Router &amp; switch installation</span><span>Field work</span></div>
+</template>
+
+<template id="proj-uniinfohub">
+  <div class="m-meta"><span class="hl">Full-stack web app</span><span>University of Windsor</span><span>2024</span></div>
+  <h2 id="m-title">UniInfoHub</h2>
+  <p class="m-org">A centralized platform that simplifies university life by bringing essential resources, services and information for University of Windsor students into one place.</p>
+  <p class="m-h">Features</p>
+  <ul class="m-list">
+    <li>Live campus information (important dates, daily news and U-Pass deadlines), collected automatically from uwindsor.ca with Python web scrapers.</li>
+    <li>Health-centre appointment booking, with doctors, departments and booked schedules managed through an admin dashboard.</li>
+    <li>Transit and bus-pass information, plus UWinCard top-ups handled through Stripe Checkout.</li>
+    <li>Student services in one place: accommodation and rentals, library services, health and wellness, and campus maps with Google Maps.</li>
+  </ul>
+  <p class="m-h">How it's built</p>
+  <ul class="m-list">
+    <li><b>Frontend:</b> React single-page app with React Router, Bootstrap and styled-components.</li>
+    <li><b>Backend:</b> Python Flask REST API with Flask-CORS, SQLAlchemy models and a MySQL database.</li>
+    <li><b>Integrations:</b> BeautifulSoup scrapers, the Stripe payments API and the Google Maps API.</li>
+  </ul>
+  <p class="m-h">Tech</p>
+  <div class="chips" style="margin-bottom:1.5rem"><span class="hl">React</span><span class="hl">Python</span><span class="hl">Flask</span><span>MySQL</span><span>SQLAlchemy</span><span>REST API</span><span>BeautifulSoup</span><span>Stripe</span><span>Google Maps API</span></div>
+  <div class="actions">
+    <a class="btn ghost sm" href="https://github.com/shwakib/UniInfoHub" target="_blank" rel="noopener">View code on GitHub</a>
+  </div>
 </template>
 
 <template id="pub-traffic">
