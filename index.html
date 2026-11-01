@@ -152,8 +152,14 @@
   @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.98); } }
   @keyframes fade { from { opacity: 0; } }
   .m-inner { max-height: inherit; overflow-y: auto; padding: 2rem; overscroll-behavior: contain; }
-  .m-close { position: absolute; top: 1rem; right: 1rem; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line-2); background: rgba(17,17,20,.8); color: var(--text); font-size: 1.1rem; cursor: pointer; display: grid; place-items: center; z-index: 1; }
+  .m-close { position: absolute; top: 1rem; right: 1rem; z-index: 2; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line-2); background: rgba(17,17,20,.8); color: var(--text); font-size: 1.1rem; cursor: pointer; display: grid; place-items: center; }
   .m-close:hover { background: rgba(255,255,255,.1); }
+  .m-close:focus { outline: none; }
+  .m-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  /* Fade the text out as it scrolls under the close button */
+  dialog.modal::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4.25rem; z-index: 1; pointer-events: none; border-radius: inherit;
+    background: linear-gradient(180deg, var(--card-2) 45%, transparent); opacity: 0; transition: opacity .2s; }
+  dialog.modal.scrolled::before { opacity: 1; }
   .m-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; padding-right: 2.5rem; }
   .m-meta span { font-size: .78rem; font-weight: 600; padding: .2rem .65rem; border-radius: 999px; border: 1px solid var(--line-2); color: var(--soft); }
   .m-meta span.hl { color: #A9BBFF; background: var(--accent-dim); border-color: rgba(109,139,255,.3); }
@@ -162,7 +168,7 @@
   .m-stats { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem; }
   .m-stats div { flex: 1 1 140px; padding: .9rem 1rem; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.02); }
   .m-stats b { display: block; font-size: 1.5rem; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
-  .m-stats span { color: var(--soft); font-size: .85rem; }
+  .m-stats span { display: block; color: var(--soft); font-size: .85rem; line-height: 1.4; margin-top: .2rem; }
   .m-h { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin: 0 0 .8rem; }
   .m-list { list-style: none; padding: 0; margin: 0 0 1.6rem; display: grid; gap: .75rem; }
   .m-list li { position: relative; padding-left: 1.3rem; color: #D4D4D8; font-size: .97rem; line-height: 1.6; }
@@ -170,10 +176,8 @@
   .modal .chips { margin-bottom: .25rem; }
   body.modal-open { overflow: hidden; }
   @media (max-width: 520px) {
-    dialog.modal { width: 100%; max-width: 100%; max-height: 90vh; margin: auto 0 0; border-radius: 24px 24px 0 0; border-bottom: 0; }
-    dialog.modal[open] { animation: up .3s cubic-bezier(.2,.8,.2,1); }
-    @keyframes up { from { transform: translateY(40px); opacity: 0; } }
-    .m-inner { padding: 1.6rem 1.35rem calc(1.6rem + env(safe-area-inset-bottom, 0px)); }
+    dialog.modal { width: calc(100% - 1.5rem); max-width: 100%; max-height: 86vh; max-height: 86dvh; margin: auto; border-radius: 24px; }
+    .m-inner { padding: 1.6rem 1.35rem 1.75rem; }
   }
 
   /* Education */
@@ -271,6 +275,18 @@
   .c-form button[disabled] { opacity: .65; cursor: progress; transform: none; }
   @media (max-width: 860px) { .contact { grid-template-columns: 1fr; gap: 2rem; } }
   @media (max-width: 520px) { .f-row { grid-template-columns: 1fr; } }
+  .email-pill { display: inline-flex; align-items: stretch; max-width: 100%; border: 1px solid var(--line-2); border-radius: 999px; background: rgba(255,255,255,.03); transition: border-color .2s; }
+  .email-pill:hover { border-color: rgba(255,255,255,.22); }
+  .email-pill a { display: inline-flex; align-items: center; gap: .6rem; padding: .7rem .6rem .7rem 1.1rem; font-weight: 600; font-size: .95rem; color: var(--text); min-width: 0; overflow-wrap: anywhere; border-radius: 999px 0 0 999px; }
+  .email-pill a svg { width: 18px; height: 18px; flex: none; color: var(--accent); }
+  .email-pill a:hover { background: rgba(255,255,255,.04); }
+  .email-pill .copy { flex: none; align-self: center; display: grid; place-items: center; width: 36px; height: 36px; margin: 0 .35rem 0 0; border: 1px solid rgba(109,139,255,.28); background: rgba(109,139,255,.12); color: #A9BBFF; cursor: pointer; border-radius: 50%; transition: color .2s, background .2s, border-color .2s; }
+  .email-pill .copy:hover { color: var(--text); background: rgba(109,139,255,.22); border-color: rgba(109,139,255,.45); }
+  .email-pill .copy.done { background: rgba(61,220,151,.14); border-color: rgba(61,220,151,.35); }
+  .email-pill .copy svg { width: 16px; height: 16px; grid-area: 1 / 1; transition: opacity .2s, transform .2s; }
+  .email-pill .copy .i-ok { opacity: 0; transform: scale(.6); color: #5BE3A6; }
+  .email-pill .copy.done .i-copy { opacity: 0; transform: scale(.6); }
+  .email-pill .copy.done .i-ok { opacity: 1; transform: none; }
   .copy { position: relative; }
   .copy .toast { position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translate(-50%, 6px); background: var(--text); color: var(--bg); font-size: .8rem; font-weight: 600; padding: .3rem .7rem; border-radius: 8px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; white-space: nowrap; }
   .copy.done .toast { opacity: 1; transform: translate(-50%, 0); }
@@ -477,10 +493,9 @@
       <div class="c-left">
         <h2>Let's talk.</h2>
         <p>I'm looking for NOC and network engineering roles in Windsor and across Ontario. Send a message here, or reach me directly.</p>
-        <div class="actions">
-          <a class="btn ghost sm" href="mailto:sifat@sifatwakib.com">sifat@sifatwakib.com</a>
-          <button class="btn ghost sm copy" type="button" data-email="sifat@sifatwakib.com"><span class="toast">Copied</span>Copy email</button>
-          <a class="btn ghost sm" href="https://www.linkedin.com/in/sifathasanwakib" target="_blank" rel="noopener">LinkedIn</a>
+        <div class="email-pill">
+          <a href="mailto:sifat@sifatwakib.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>sifat@sifatwakib.com</a>
+          <button class="copy" type="button" data-email="sifat@sifatwakib.com" aria-label="Copy email address" title="Copy email"><span class="toast">Copied!</span><svg class="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="i-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></button>
         </div>
       </div>
       <form class="c-form" id="contact-form" action="https://formsubmit.co/e305bbc1ce3f441fcb1a606d077a01b4" method="POST" novalidate>
@@ -721,11 +736,13 @@
     if (!tpl) return;
     mBody.replaceChildren(tpl.content.cloneNode(true));
     mBody.scrollTop = 0;
+    modal.classList.remove('scrolled');
     lastBtn = btn;
     if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
     document.body.classList.add('modal-open');
   }));
   modal.querySelector('.m-close').addEventListener('click', closeModal);
+  mBody.addEventListener('scroll', () => modal.classList.toggle('scrolled', mBody.scrollTop > 8), { passive: true });
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   modal.addEventListener('close', () => { document.body.classList.remove('modal-open'); if (lastBtn) lastBtn.focus(); });
 
