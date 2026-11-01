@@ -423,6 +423,22 @@
             <button class="details" type="button" data-job="proj-uniinfohub">Details</button>
           </div>
         </article>
+        <article class="proj">
+          <div class="proj-top">
+            <h3>AnyoneIn</h3>
+            <span class="tag">Team project</span>
+          </div>
+          <p>A community platform that connects innovators with like-minded people so they can find a team and build their dream project together, with profiles, project join requests, a feed, messaging and notifications.</p>
+          <div class="chips"><span class="hl">React</span><span class="hl">Node.js</span><span>Express</span><span>MariaDB</span><span>Redis</span><span>Docker</span><span>AWS S3</span></div>
+          <div class="proj-actions">
+            <a class="btn ghost sm" href="https://github.com/shwakib/uow-comp8967-anyonein" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+              Code
+            </a>
+            <a class="btn ghost sm" href="http://anyoneinbucket.s3-website-us-east-1.amazonaws.com/" target="_blank" rel="noopener">Live demo</a>
+            <button class="details" type="button" data-job="proj-anyonein">Details</button>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -552,6 +568,32 @@
   <div class="chips" style="margin-bottom:1.5rem"><span class="hl">React</span><span class="hl">Python</span><span class="hl">Flask</span><span>MySQL</span><span>SQLAlchemy</span><span>REST API</span><span>BeautifulSoup</span><span>Stripe</span><span>Google Maps API</span></div>
   <div class="actions">
     <a class="btn ghost sm" href="https://github.com/shwakib/UniInfoHub" target="_blank" rel="noopener">View code on GitHub</a>
+  </div>
+</template>
+
+<template id="proj-anyonein">
+  <div class="m-meta"><span class="hl">Team project</span><span>Full-stack web app</span><span>University of Windsor</span><span>2024</span></div>
+  <h2 id="m-title">AnyoneIn</h2>
+  <p class="m-org">Connect, Collaborate, Create: a community platform that helps innovators find like-minded people and build their dream project with their dream team.</p>
+  <p class="m-h">Features</p>
+  <ul class="m-list">
+    <li>Sign-up and login with secure, token-based authentication, plus user profiles with skills.</li>
+    <li>Projects that others can discover and request to join, with owners accepting or rejecting join requests.</li>
+    <li>Following people and projects, an announcements feed, one-to-one messaging and notifications.</li>
+    <li>Search for users and projects, and file uploads for project and profile content.</li>
+  </ul>
+  <p class="m-h">How it's built</p>
+  <ul class="m-list">
+    <li><b>Frontend:</b> React single-page app with React Router, Material UI and React-Bootstrap.</li>
+    <li><b>Backend:</b> Node.js and Express REST API with TypeORM models on MariaDB/MySQL and Redis for caching.</li>
+    <li><b>Security and storage:</b> JWT authentication with bcrypt password hashing, and Azure Blob Storage for file uploads.</li>
+    <li><b>DevOps:</b> Docker Compose for the local database stack, GitHub Actions CI to build and test on every push, and the frontend hosted as a static site on AWS S3.</li>
+  </ul>
+  <p class="m-h">Tech</p>
+  <div class="chips" style="margin-bottom:1.5rem"><span class="hl">React</span><span class="hl">Node.js</span><span class="hl">Express</span><span>MariaDB / MySQL</span><span>TypeORM</span><span>Redis</span><span>JWT</span><span>Azure Blob Storage</span><span>Docker</span><span>GitHub Actions</span><span>AWS S3</span></div>
+  <div class="actions">
+    <a class="btn ghost sm" href="https://github.com/shwakib/uow-comp8967-anyonein" target="_blank" rel="noopener">View code on GitHub</a>
+    <a class="btn ghost sm" href="http://anyoneinbucket.s3-website-us-east-1.amazonaws.com/" target="_blank" rel="noopener">Live demo</a>
   </div>
 </template>
 
