@@ -223,6 +223,8 @@
   .proj-top { display: flex; justify-content: space-between; align-items: center; gap: .75rem; flex-wrap: wrap; }
   .proj h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -.02em; margin: 0; }
   .proj p { color: var(--soft); font-size: .95rem; margin: 0; flex: 1; }
+  .proj p.role { flex: 0; font-size: .9rem; color: #C4C4CC; padding: .55rem .8rem; border-radius: 12px; background: var(--accent-dim); border: 1px solid rgba(109,139,255,.25); }
+  .proj p.role b { color: var(--text); font-weight: 600; }
   .proj .tag { font-size: .72rem; font-weight: 600; padding: .14rem .6rem; border-radius: 999px; border: 1px solid var(--line-2); color: var(--soft); }
   .proj .tag.now { color: #A9BBFF; background: var(--accent-dim); border-color: rgba(109,139,255,.3); }
   .proj .chips span { font-size: .8rem; padding: .3rem .7rem; }
@@ -429,6 +431,7 @@
             <span class="tag">Team project</span>
           </div>
           <p>A community platform that connects innovators with like-minded people so they can find a team and build their dream project together, with profiles, project join requests, a feed, messaging and notifications.</p>
+          <p class="role"><b>My role:</b> DevOps and frontend development.</p>
           <div class="chips"><span class="hl">React</span><span class="hl">Node.js</span><span>Express</span><span>MariaDB</span><span>Redis</span><span>Docker</span><span>AWS S3</span></div>
           <div class="proj-actions">
             <a class="btn ghost sm" href="https://github.com/shwakib/uow-comp8967-anyonein" target="_blank" rel="noopener">
@@ -575,6 +578,11 @@
   <div class="m-meta"><span class="hl">Team project</span><span>Full-stack web app</span><span>University of Windsor</span><span>2024</span></div>
   <h2 id="m-title">AnyoneIn</h2>
   <p class="m-org">Connect, Collaborate, Create: a community platform that helps innovators find like-minded people and build their dream project with their dream team.</p>
+  <p class="m-h">My role</p>
+  <ul class="m-list">
+    <li><b>DevOps:</b> owned the build-and-deploy side of the project, including the GitHub Actions CI pipeline that builds and tests the app on every push, and hosting the frontend as a static site on AWS S3.</li>
+    <li><b>Frontend development:</b> built several of the React pages and features.</li>
+  </ul>
   <p class="m-h">Features</p>
   <ul class="m-list">
     <li>Sign-up and login with secure, token-based authentication, plus user profiles with skills.</li>
